@@ -118,12 +118,14 @@ spec:
     disableCopiedCSVs: true
 ```
 
+TIP: Additional information about the `disableCopiedCSVs` feature can be found in its original link:https://github.com/operator-framework/enhancements/blob/master/enhancements/olm-toggle-copied-csvs.md[enhancement proposal].
+
 The primary impact of the `disableCopiedCSVs` property on etcd is related to resource consumption. In clusters with a large number of namespaces and many cluster-wide Operators, the creation and maintenance of numerous Copied CSVs can lead to increased etcd storage usage and memory consumption. By disabling Copied CSVs, the amount of data stored in etcd is significantly reduced, which can help improve overall cluster performance and stability.
 
 This is particularly important for large clusters where the number of namespaces and operators can quickly add up to a significant amount of data. Disabling Copied CSVs can help reduce the load on etcd, leading to improved performance and responsiveness of the cluster.
 Additionally, it can help reduce the memory footprint of OLM, as it no longer needs to maintain and manage these additional resources.
 
-TIP: You can find more details about Disabling Copied CSVs in the link:https://olm.operatorframework.io/docs/advanced-tasks/configuring-olm/#disabling-copied-csvs[official documentation].
+TIP: You can find more details about "Disabling Copied CSVs" in the link:https://olm.operatorframework.io/docs/advanced-tasks/configuring-olm/#disabling-copied-csvs[official documentation].
 
 == Cluster Autoscaling
 
